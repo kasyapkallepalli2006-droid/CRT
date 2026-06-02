@@ -1,0 +1,200 @@
+2026-06-02 08:03:04,832 | INFO | logger | Logger initialized successfully
+2026-06-02 08:03:05,091 | INFO | app | All blueprints registered successfully
+2026-06-02 08:03:05,092 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 08:03:05,092 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 08:03:05,178 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 08:03:05,178 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-02 08:03:05,181 | INFO | _internal |  * Restarting with stat
+2026-06-02 08:03:05,795 | INFO | logger | Logger initialized successfully
+2026-06-02 08:03:05,841 | INFO | app | All blueprints registered successfully
+2026-06-02 08:03:05,841 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 08:03:05,841 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 08:03:05,858 | WARNING | _internal |  * Debugger is active!
+2026-06-02 08:03:05,861 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 08:03:39,960 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:03:39] "GET /docs HTTP/1.1" 200 -
+2026-06-02 08:03:40,353 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:03:40] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 200 -
+2026-06-02 08:03:40,502 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:03:40] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 200 -
+2026-06-02 08:03:40,866 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:03:40] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 200 -
+2026-06-02 08:03:42,053 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:03:42] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2026-06-02 08:03:42,256 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:03:42] "GET /apispec.json HTTP/1.1" 200 -
+2026-06-02 08:03:42,257 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:03:42] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 200 -
+2026-06-02 08:09:07,076 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\routes\\auth_routes.py', reloading
+2026-06-02 08:09:07,650 | INFO | _internal |  * Restarting with stat
+2026-06-02 08:09:09,129 | INFO | logger | Logger initialized successfully
+2026-06-02 08:09:09,204 | INFO | app | All blueprints registered successfully
+2026-06-02 08:09:09,205 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 08:09:09,205 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 08:09:09,226 | WARNING | _internal |  * Debugger is active!
+2026-06-02 08:09:09,229 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 08:09:31,911 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\swagger_config.py', reloading
+2026-06-02 08:09:32,277 | INFO | _internal |  * Restarting with stat
+2026-06-02 08:14:10,052 | INFO | logger | Logger initialized successfully
+2026-06-02 08:14:10,111 | INFO | app | All blueprints registered successfully
+2026-06-02 08:14:10,112 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 08:14:10,112 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 08:14:10,139 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 08:14:10,142 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-02 08:14:10,144 | INFO | _internal |  * Restarting with stat
+2026-06-02 08:14:10,864 | INFO | logger | Logger initialized successfully
+2026-06-02 08:14:10,909 | INFO | app | All blueprints registered successfully
+2026-06-02 08:14:10,910 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 08:14:10,910 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 08:14:10,928 | WARNING | _internal |  * Debugger is active!
+2026-06-02 08:14:10,931 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 08:14:25,442 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:14:25] "GET /docs HTTP/1.1" 200 -
+2026-06-02 08:14:25,673 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:14:25] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-06-02 08:14:25,682 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:14:25] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-06-02 08:14:25,684 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:14:25] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-06-02 08:14:25,688 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:14:25] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-06-02 08:14:25,957 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 08:14:25] "GET /apispec.json HTTP/1.1" 200 -
+2026-06-02 09:17:18,568 | INFO | logger | Logger initialized successfully
+2026-06-02 09:17:18,618 | INFO | app | All blueprints registered successfully
+2026-06-02 09:17:18,619 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:17:18,620 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:17:18,654 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 09:17:18,655 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-02 09:17:18,657 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:17:19,400 | INFO | logger | Logger initialized successfully
+2026-06-02 09:17:19,441 | INFO | app | All blueprints registered successfully
+2026-06-02 09:17:19,442 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:17:19,443 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:17:19,458 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:17:19,461 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:19:01,884 | INFO | logger | Logger initialized successfully
+2026-06-02 09:19:01,962 | INFO | app | All blueprints registered successfully
+2026-06-02 09:19:01,964 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:19:01,965 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:19:02,042 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 09:19:02,043 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-02 09:19:02,047 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:19:02,879 | INFO | logger | Logger initialized successfully
+2026-06-02 09:19:02,950 | INFO | app | All blueprints registered successfully
+2026-06-02 09:19:02,952 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:19:02,953 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:19:02,979 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:19:02,983 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:19:28,007 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:19:28] "GET /docs HTTP/1.1" 200 -
+2026-06-02 09:19:28,226 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:19:28] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-06-02 09:19:28,248 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:19:28] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-06-02 09:19:28,253 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:19:28] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-06-02 09:19:28,254 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:19:28] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-06-02 09:19:28,445 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:19:28] "GET /apispec.json HTTP/1.1" 200 -
+2026-06-02 09:19:53,892 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:19:53] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-02 09:21:05,371 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:21:05] "[31m[1mPOST /api/complaints HTTP/1.1[0m" 401 -
+2026-06-02 09:23:13,134 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:23:13] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 400 -
+2026-06-02 09:23:38,643 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:23:38] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-02 09:25:31,032 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:25:31] "[31m[1mPOST /api/complaints HTTP/1.1[0m" 401 -
+2026-06-02 09:27:02,667 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:27:02] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-02 09:27:47,603 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:27:47] "[35m[1mPOST /api/complaints HTTP/1.1[0m" 201 -
+2026-06-02 09:34:02,637 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:34:02] "[35m[1mPOST /api/complaints/6a1e54bb55004145f24fa6cc/upload HTTP/1.1[0m" 201 -
+2026-06-02 09:37:53,652 | WARNING | app | 404 - Route not found
+2026-06-02 09:37:53,653 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:37:53] "[33mGET /api/uploads/street_light HTTP/1.1[0m" 404 -
+2026-06-02 09:39:14,325 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:39:14] "GET /api/complaints/6a1e54bb55004145f24fa6cc/files HTTP/1.1" 200 -
+2026-06-02 09:39:24,721 | WARNING | app | 404 - Route not found
+2026-06-02 09:39:24,722 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:39:24] "[33mGET /7a077cbe-bdbe-4c34-a17f-dcefb71eb980_TUBUled-street-light.jpg HTTP/1.1[0m" 404 -
+2026-06-02 09:40:35,386 | WARNING | app | 404 - Route not found
+2026-06-02 09:40:35,387 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:40:35] "[33mGET /street_light.jpeg HTTP/1.1[0m" 404 -
+2026-06-02 09:41:38,935 | WARNING | app | 404 - Route not found
+2026-06-02 09:41:38,935 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:41:38] "[33mGET /street_light.jpg HTTP/1.1[0m" 404 -
+2026-06-02 09:47:52,329 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:47:52] "[35m[1mGET /api/complaints/6a1e54bb55004145f24fa6cc HTTP/1.1[0m" 500 -
+2026-06-02 09:48:01,941 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 09:48:01] "[35m[1mGET /api/complaints/6a1e54bb55004145f24fa6cc HTTP/1.1[0m" 500 -
+2026-06-02 09:50:33,128 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:50:33,549 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:50:34,107 | INFO | logger | Logger initialized successfully
+2026-06-02 09:50:34,178 | INFO | app | All blueprints registered successfully
+2026-06-02 09:50:34,179 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:50:34,179 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:50:34,195 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:50:34,197 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:50:37,256 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:50:37,803 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:50:38,172 | INFO | logger | Logger initialized successfully
+2026-06-02 09:50:38,210 | INFO | app | All blueprints registered successfully
+2026-06-02 09:50:38,211 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:50:38,211 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:50:38,222 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:50:38,224 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:50:42,312 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:50:42,896 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:50:43,275 | INFO | logger | Logger initialized successfully
+2026-06-02 09:50:43,315 | INFO | app | All blueprints registered successfully
+2026-06-02 09:50:43,315 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:50:43,316 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:50:43,329 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:50:43,331 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:50:44,356 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:50:44,820 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:50:45,188 | INFO | logger | Logger initialized successfully
+2026-06-02 09:50:45,227 | INFO | app | All blueprints registered successfully
+2026-06-02 09:50:45,228 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:50:45,228 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:50:45,240 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:50:45,243 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:50:47,278 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:50:47,797 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:50:48,203 | INFO | logger | Logger initialized successfully
+2026-06-02 09:50:48,241 | INFO | app | All blueprints registered successfully
+2026-06-02 09:50:48,242 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:50:48,243 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:50:48,254 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:50:48,256 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:50:50,294 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:50:50,788 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:50:51,157 | INFO | logger | Logger initialized successfully
+2026-06-02 09:50:51,194 | INFO | app | All blueprints registered successfully
+2026-06-02 09:50:51,194 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:50:51,194 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:50:51,205 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:50:51,207 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:50:53,245 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:50:53,734 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:50:54,084 | INFO | logger | Logger initialized successfully
+2026-06-02 09:50:54,124 | INFO | app | All blueprints registered successfully
+2026-06-02 09:50:54,125 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:50:54,125 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:50:54,142 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:50:54,144 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:50:56,189 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:50:56,678 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:50:57,060 | INFO | logger | Logger initialized successfully
+2026-06-02 09:50:57,098 | INFO | app | All blueprints registered successfully
+2026-06-02 09:50:57,098 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:50:57,098 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:50:57,109 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:50:57,111 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:51:01,202 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:51:01,779 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:51:02,189 | INFO | logger | Logger initialized successfully
+2026-06-02 09:51:02,247 | INFO | app | All blueprints registered successfully
+2026-06-02 09:51:02,248 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:51:02,248 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:51:02,259 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:51:02,262 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:51:03,291 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:51:03,756 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:51:04,162 | INFO | logger | Logger initialized successfully
+2026-06-02 09:51:04,200 | INFO | app | All blueprints registered successfully
+2026-06-02 09:51:04,201 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:51:04,201 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:51:04,212 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:51:04,214 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:51:05,245 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:51:05,734 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:51:06,145 | INFO | logger | Logger initialized successfully
+2026-06-02 09:51:06,184 | INFO | app | All blueprints registered successfully
+2026-06-02 09:51:06,185 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:51:06,186 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:51:06,197 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:51:06,199 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 09:51:07,228 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\OneDrive\\Documents\\CRT\\services\\complaint_service.py', reloading
+2026-06-02 09:51:07,705 | INFO | _internal |  * Restarting with stat
+2026-06-02 09:51:08,081 | INFO | logger | Logger initialized successfully
+2026-06-02 09:51:08,119 | INFO | app | All blueprints registered successfully
+2026-06-02 09:51:08,119 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 09:51:08,120 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 09:51:08,131 | WARNING | _internal |  * Debugger is active!
+2026-06-02 09:51:08,134 | INFO | _internal |  * Debugger PIN: 138-110-176
