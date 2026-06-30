@@ -10,11 +10,11 @@ def get_database():
 
         db = client[Config.DATABASE_NAME]
 
-        print("✅ MongoDB connected successfully!")
+        print("[OK] MongoDB connected successfully!")
         return db
 
     except ConnectionFailure as e:
-        print(f"❌ MongoDB connection failed: {e}")
+        print(f"[ERROR] MongoDB connection failed: {e}")
         return None
 
 db = get_database()

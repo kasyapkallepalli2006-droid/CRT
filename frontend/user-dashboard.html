@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard — Complaint Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:#0f1f4b; --navy-mid:#1a2f6b; --blue:#2563eb;
+      --blue-light:#3b82f6; --accent:#f59e0b; --bg:#f0f4ff;
+      --white:#ffffff; --text:#0f172a; --muted:#64748b;
+      --border:#e2e8f0; --card:#ffffff;
+      --pending:#f59e0b; --assigned:#3b82f6; --progress:#8b5cf6;
+      --escalated:#ef4444; --resolved:#22c55e; --closed:#94a3b8;
+      --low:#22c55e; --medium:#f59e0b; --high:#f97316; --critical:#ef4444;
+      --sidebar-w:260px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh;}
+
+    /* SIDEBAR */
+    .sidebar {
+      width:var(--sidebar-w); background:var(--navy);
+      min-height:100vh; position:fixed; top:0; left:0;
+      display:flex; flex-direction:column; z-index:100;
+      box-shadow:4px 0 20px rgba(0,0,0,0.15);
+    }
+    .sidebar-brand {
+      padding:28px 24px 24px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    .sidebar-brand .logo {
+      display:flex; align-items:center; gap:12px;
+    }
+    .logo-icon {
+      width:40px; height:40px; background:var(--accent);
+      border-radius:10px; display:flex; align-items:center;
+      justify-content:center; font-size:16px; color:var(--navy);
+    }
+    .logo-text h2 {
+      font-family:'Syne',sans-serif; font-size:14px; font-weight:800;
+      color:var(--white); line-height:1.2;
+    }
+    .logo-text span { font-size:11px; color:rgba(255,255,255,0.4); }
+    .sidebar-user {
+      padding:20px 24px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    .user-avatar {
+      width:44px; height:44px; background:var(--blue);
+      border-radius:50%; display:flex; align-items:center;
+      justify-content:center; font-family:'Syne',sans-serif;
+      font-size:16px; font-weight:700; color:var(--white);
+      margin-bottom:10px;
+    }
+    .user-name { font-size:14px; font-weight:500; color:var(--white); }
+    .user-role {
+      font-size:11px; color:rgba(255,255,255,0.4);
+      background:rgba(255,255,255,0.08);
+      padding:2px 8px; border-radius:20px; display:inline-block; margin-top:4px;
+    }
+    .sidebar-nav { flex:1; padding:16px 12px; }
+    .nav-item {
+      display:flex; align-items:center; gap:12px;
+      padding:11px 14px; border-radius:10px;
+      color:rgba(255,255,255,0.55); font-size:14px;
+      cursor:pointer; transition:all 0.2s; margin-bottom:4px;
+      text-decoration:none; position:relative;
+    }
+    .nav-item i { width:18px; text-align:center; font-size:14px; }
+    .nav-item:hover { background:rgba(255,255,255,0.08); color:var(--white); }
+    .nav-item.active {
+      background:var(--blue); color:var(--white);
+      box-shadow:0 4px 12px rgba(37,99,235,0.3);
+    }
+    .badge {
+      position:absolute; right:12px; top:50%; transform:translateY(-50%);
+      background:var(--accent); color:var(--navy);
+      font-size:10px; font-weight:700; padding:2px 7px;
+      border-radius:20px; font-family:'Syne',sans-serif;
+    }
+    .sidebar-footer { padding:16px 24px; border-top:1px solid rgba(255,255,255,0.08); }
+    .btn-logout {
+      width:100%; padding:10px; background:rgba(239,68,68,0.15);
+      color:#fca5a5; border:1px solid rgba(239,68,68,0.2);
+      border-radius:10px; font-size:13px; font-family:'DM Sans',sans-serif;
+      cursor:pointer; transition:all 0.2s; display:flex; align-items:center;
+      justify-content:center; gap:8px;
+    }
+    .btn-logout:hover { background:rgba(239,68,68,0.25); color:#fff; }
+
+    /* MAIN */
+    .main { margin-left:var(--sidebar-w); flex:1; padding:32px; min-height:100vh; }
+    .page-header { margin-bottom:28px; }
+    .page-header h1 {
+      font-family:'Syne',sans-serif; font-size:26px; font-weight:800;
+      color:var(--text); letter-spacing:-0.5px;
+    }
+    .page-header p { color:var(--muted); font-size:14px; margin-top:4px; }
+
+    /* STAT CARDS */
+    .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:28px; }
+    .stat-card {
+      background:var(--white); border-radius:14px;
+      padding:20px; box-shadow:0 2px 12px rgba(0,0,0,0.05);
+      border:1px solid var(--border); position:relative; overflow:hidden;
+    }
+    .stat-card::before {
+      content:''; position:absolute; top:0; left:0;
+      right:0; height:3px;
+    }
+    .stat-card.blue::before { background:var(--blue); }
+    .stat-card.amber::before { background:var(--accent); }
+    .stat-card.green::before { background:var(--resolved); }
+    .stat-card.red::before { background:var(--escalated); }
+    .stat-icon {
+      width:40px; height:40px; border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:16px; margin-bottom:14px;
+    }
+    .stat-icon.blue { background:#eff6ff; color:var(--blue); }
+    .stat-icon.amber { background:#fffbeb; color:var(--accent); }
+    .stat-icon.green { background:#f0fdf4; color:var(--resolved); }
+    .stat-icon.red { background:#fef2f2; color:var(--escalated); }
+    .stat-num {
+      font-family:'Syne',sans-serif; font-size:28px; font-weight:800;
+      color:var(--text); line-height:1;
+    }
+    .stat-label { font-size:12px; color:var(--muted); margin-top:4px; }
+
+    /* SECTION */
+    .section { display:none; }
+    .section.active { display:block; }
+
+    /* CARDS */
+    .card {
+      background:var(--white); border-radius:14px;
+      box-shadow:0 2px 12px rgba(0,0,0,0.05);
+      border:1px solid var(--border); overflow:hidden;
+    }
+    .card-header {
+      padding:18px 22px; border-bottom:1px solid var(--border);
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .card-header h3 {
+      font-family:'Syne',sans-serif; font-size:16px; font-weight:700; color:var(--text);
+    }
+    .card-body { padding:22px; }
+
+    /* TABLE */
+    table { width:100%; border-collapse:collapse; }
+    th {
+      text-align:left; padding:10px 14px; font-size:11px;
+      font-weight:600; color:var(--muted); text-transform:uppercase;
+      letter-spacing:0.5px; background:#f8fafc; border-bottom:1px solid var(--border);
+    }
+    td { padding:14px 14px; font-size:13px; border-bottom:1px solid #f1f5f9; vertical-align:middle; }
+    tr:last-child td { border-bottom:none; }
+    tr:hover td { background:#fafafa; }
+
+    /* STATUS BADGES */
+    .badge-status {
+      padding:3px 10px; border-radius:20px;
+      font-size:11px; font-weight:600; font-family:'Syne',sans-serif;
+      display:inline-block;
+    }
+    .badge-status.Pending { background:#fffbeb; color:#b45309; }
+    .badge-status.Assigned { background:#eff6ff; color:#1d4ed8; }
+    .badge-status.In-Progress { background:#f5f3ff; color:#6d28d9; }
+    .badge-status.Escalated { background:#fef2f2; color:#b91c1c; }
+    .badge-status.Resolved { background:#f0fdf4; color:#15803d; }
+    .badge-status.Closed { background:#f8fafc; color:#64748b; }
+
+    .badge-priority {
+      padding:3px 10px; border-radius:20px;
+      font-size:11px; font-weight:600;
+    }
+    .badge-priority.Low { background:#f0fdf4; color:#15803d; }
+    .badge-priority.Medium { background:#fffbeb; color:#b45309; }
+    .badge-priority.High { background:#fff7ed; color:#c2410c; }
+    .badge-priority.Critical { background:#fef2f2; color:#b91c1c; }
+
+    /* BUTTONS */
+    .btn {
+      padding:8px 16px; border-radius:8px; font-size:13px;
+      font-family:'Syne',sans-serif; font-weight:600;
+      cursor:pointer; border:none; transition:all 0.2s;
+      display:inline-flex; align-items:center; gap:6px;
+    }
+    .btn-blue { background:var(--blue); color:#fff; }
+    .btn-blue:hover { background:var(--blue-light); }
+    .btn-sm { padding:5px 12px; font-size:12px; }
+    .btn-outline {
+      background:transparent; color:var(--blue);
+      border:1.5px solid var(--blue);
+    }
+    .btn-outline:hover { background:var(--blue); color:#fff; }
+
+    /* FORM */
+    .form-group { margin-bottom:18px; }
+    .form-group label { display:block; font-size:13px; font-weight:500; color:var(--text); margin-bottom:6px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width:100%; padding:11px 14px;
+      border:1.5px solid var(--border); border-radius:10px;
+      font-size:13px; font-family:'DM Sans',sans-serif;
+      color:var(--text); background:#f8fafc; outline:none;
+      transition:all 0.2s;
+    }
+    .form-group textarea { resize:vertical; min-height:100px; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color:var(--blue); background:#fff;
+      box-shadow:0 0 0 3px rgba(37,99,235,0.1);
+    }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+    /* MODAL */
+    .modal-overlay {
+      position:fixed; top:0; left:0; right:0; bottom:0;
+      background:rgba(15,31,75,0.5); backdrop-filter:blur(4px);
+      z-index:1000; display:none; align-items:center; justify-content:center;
+    }
+    .modal-overlay.open { display:flex; }
+    .modal {
+      background:var(--white); border-radius:16px;
+      width:600px; max-height:85vh; overflow-y:auto;
+      box-shadow:0 30px 80px rgba(0,0,0,0.2);
+      animation:popIn 0.3s cubic-bezier(0.16,1,0.3,1);
+    }
+    @keyframes popIn {
+      from{opacity:0;transform:scale(0.95)}
+      to{opacity:1;transform:scale(1)}
+    }
+    .modal-header {
+      padding:22px 26px; border-bottom:1px solid var(--border);
+      display:flex; align-items:center; justify-content:space-between;
+      position:sticky; top:0; background:var(--white); z-index:1;
+    }
+    .modal-header h3 { font-family:'Syne',sans-serif; font-size:18px; font-weight:700; }
+    .modal-close {
+      width:32px; height:32px; border-radius:8px;
+      background:#f1f5f9; border:none; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      font-size:14px; color:var(--muted); transition:all 0.2s;
+    }
+    .modal-close:hover { background:#e2e8f0; color:var(--text); }
+    .modal-body { padding:26px; }
+    .modal-footer {
+      padding:16px 26px; border-top:1px solid var(--border);
+      display:flex; justify-content:flex-end; gap:12px;
+      background:#f8fafc;
+    }
+    .btn-cancel {
+      background:#f1f5f9; color:var(--text); border:none;
+      padding:10px 20px; border-radius:8px;
+      font-family:'Syne',sans-serif; font-weight:600;
+      font-size:13px; cursor:pointer;
+    }
+    .btn-cancel:hover { background:#e2e8f0; }
+
+    /* NOTIFICATIONS */
+    .notif-item {
+      display:flex; gap:14px; padding:14px 0;
+      border-bottom:1px solid #f1f5f9;
+    }
+    .notif-item:last-child { border-bottom:none; }
+    .notif-icon {
+      width:38px; height:38px; min-width:38px;
+      border-radius:10px; display:flex; align-items:center;
+      justify-content:center; font-size:14px;
+    }
+    .notif-icon.info { background:#eff6ff; color:var(--blue); }
+    .notif-icon.success { background:#f0fdf4; color:var(--resolved); }
+    .notif-icon.warning { background:#fffbeb; color:var(--accent); }
+    .notif-icon.danger { background:#fef2f2; color:var(--escalated); }
+    .notif-msg { font-size:13px; color:var(--text); line-height:1.5; }
+    .notif-time { font-size:11px; color:var(--muted); margin-top:4px; }
+    .notif-unread { background:#f0f6ff; border-radius:10px; padding:0 12px; }
+
+    /* HISTORY */
+    .history-item {
+      display:flex; gap:14px; padding:12px 0;
+      border-bottom:1px solid #f1f5f9;
+    }
+    .history-item:last-child { border-bottom:none; }
+    .history-dot {
+      width:32px; height:32px; min-width:32px;
+      border-radius:50%; display:flex; align-items:center;
+      justify-content:center; font-size:12px;
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+      text-align:center; padding:60px 20px; color:var(--muted);
+    }
+    .empty-state i { font-size:48px; margin-bottom:16px; opacity:0.3; }
+    .empty-state h3 { font-family:'Syne',sans-serif; font-size:16px; font-weight:700; color:var(--text); margin-bottom:8px; }
+    .empty-state p { font-size:13px; }
+
+    /* TOAST */
+    .toast {
+      position:fixed; bottom:28px; right:28px;
+      background:var(--text); color:#fff;
+      padding:14px 20px; border-radius:12px;
+      font-size:13px; z-index:9999;
+      box-shadow:0 8px 24px rgba(0,0,0,0.2);
+      display:none; align-items:center; gap:10px;
+      animation:slideIn 0.3s ease;
+    }
+    .toast.show { display:flex; }
+    .toast.success { background:#15803d; }
+    .toast.error { background:#b91c1c; }
+    @keyframes slideIn {
+      from{transform:translateX(100%);opacity:0}
+      to{transform:translateX(0);opacity:1}
+    }
+
+    /* LOADING */
+    .loading { text-align:center; padding:40px; color:var(--muted); }
+    .loading i { font-size:24px; animation:spin 1s linear infinite; }
+    @keyframes spin { to{transform:rotate(360deg)} }
+
+    .file-input-wrap { position:relative; }
+    .file-input-wrap input[type=file] {
+      padding:10px; cursor:pointer; background:#f8fafc;
+    }
+    .char-count { font-size:11px; color:var(--muted); text-align:right; margin-top:4px; }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="sidebar-brand">
+    <div class="logo">
+      <div class="logo-icon"><i class="fas fa-shield-halved"></i></div>
+      <div class="logo-text">
+        <h2>CMP</h2>
+        <span>Complaint Platform</span>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-user">
+    <div class="user-avatar" id="sidebarAvatar">A</div>
+    <div class="user-name" id="sidebarName">Loading...</div>
+    <span class="user-role">User</span>
+  </div>
+  <nav class="sidebar-nav">
+    <a class="nav-item active" onclick="showSection('dashboard')">
+      <i class="fas fa-home"></i> Dashboard
+    </a>
+    <a class="nav-item" onclick="showSection('complaints')">
+      <i class="fas fa-file-lines"></i> My Complaints
+    </a>
+    <a class="nav-item" onclick="showSection('submit')">
+      <i class="fas fa-plus-circle"></i> Submit Complaint
+    </a>
+    <a class="nav-item" onclick="showSection('notifications')">
+      <i class="fas fa-bell"></i> Notifications
+      <span class="badge" id="notifBadge" style="display:none">0</span>
+    </a>
+    <a class="nav-item" onclick="showSection('profile')">
+      <i class="fas fa-user"></i> My Profile
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    <button class="btn-logout" onclick="logout()">
+      <i class="fas fa-right-from-bracket"></i> Sign Out
+    </button>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- DASHBOARD -->
+  <div class="section active" id="sec-dashboard">
+    <div class="page-header">
+      <h1>Dashboard</h1>
+      <p>Overview of your complaints and activity</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card blue">
+        <div class="stat-icon blue"><i class="fas fa-file-lines"></i></div>
+        <div class="stat-num" id="statTotal">0</div>
+        <div class="stat-label">Total Complaints</div>
+      </div>
+      <div class="stat-card amber">
+        <div class="stat-icon amber"><i class="fas fa-clock"></i></div>
+        <div class="stat-num" id="statPending">0</div>
+        <div class="stat-label">Pending</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-icon green"><i class="fas fa-circle-check"></i></div>
+        <div class="stat-num" id="statResolved">0</div>
+        <div class="stat-label">Resolved</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-icon red"><i class="fas fa-triangle-exclamation"></i></div>
+        <div class="stat-num" id="statEscalated">0</div>
+        <div class="stat-label">Escalated</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3><i class="fas fa-clock-rotate-left" style="color:var(--blue);margin-right:8px"></i>Recent Complaints</h3>
+        <button class="btn btn-blue btn-sm" onclick="showSection('complaints')">View All</button>
+      </div>
+      <div class="card-body" style="padding:0">
+        <div id="recentComplaints"><div class="loading"><i class="fas fa-spinner"></i></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MY COMPLAINTS -->
+  <div class="section" id="sec-complaints">
+    <div class="page-header">
+      <h1>My Complaints</h1>
+      <p>All complaints submitted by you</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3>Complaint History</h3>
+        <button class="btn btn-blue btn-sm" onclick="showSection('submit')">
+          <i class="fas fa-plus"></i> New Complaint
+        </button>
+      </div>
+      <div id="complaintsList"><div class="loading"><i class="fas fa-spinner"></i></div></div>
+    </div>
+  </div>
+
+  <!-- SUBMIT COMPLAINT -->
+  <div class="section" id="sec-submit">
+    <div class="page-header">
+      <h1>Submit Complaint</h1>
+      <p>Describe your issue clearly for faster resolution</p>
+    </div>
+    <div class="card" style="max-width:700px">
+      <div class="card-header"><h3><i class="fas fa-paper-plane" style="color:var(--blue);margin-right:8px"></i>New Complaint</h3></div>
+      <div class="card-body">
+        <div id="submitAlert"></div>
+        <form id="submitForm">
+          <div class="form-group">
+            <label>Complaint Title *</label>
+            <input type="text" id="compTitle" placeholder="Brief summary (min 10 characters)" required/>
+            <div class="char-count"><span id="titleCount">0</span>/100</div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Category *</label>
+              <select id="compCategory" required>
+                <option value="">Select category</option>
+                <option>Infrastructure</option>
+                <option>Electricity</option>
+                <option>Water</option>
+                <option>Internet</option>
+                <option>Transport</option>
+                <option>Service Issue</option>
+                <option>Others</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Priority</label>
+              <select id="compPriority">
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+                <option value="Critical">Critical</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Detailed Description *</label>
+            <textarea id="compDesc" placeholder="Describe your issue in detail (min 20 characters)..." rows="5" required></textarea>
+            <div class="char-count"><span id="descCount">0</span>/1000</div>
+          </div>
+          <div class="form-group">
+            <label>Attach File (optional — jpg, png, pdf — max 5MB)</label>
+            <div class="file-input-wrap">
+              <input type="file" id="compFile" accept=".jpg,.jpeg,.png,.pdf"/>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:8px">
+            <button type="submit" class="btn btn-blue" id="submitBtn" style="flex:1;padding:13px;font-size:15px">
+              <i class="fas fa-paper-plane"></i> Submit Complaint
+            </button>
+            <button type="button" class="btn btn-cancel" onclick="resetForm()" style="padding:13px 20px">
+              <i class="fas fa-rotate-left"></i> Reset
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICATIONS -->
+  <div class="section" id="sec-notifications">
+    <div class="page-header">
+      <h1>Notifications</h1>
+      <p>Stay updated on your complaint activity</p>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 id="notifHeader">All Notifications</h3>
+        <button class="btn btn-outline btn-sm" onclick="markAllRead()">
+          <i class="fas fa-check-double"></i> Mark All Read
+        </button>
+      </div>
+      <div class="card-body" id="notificationsList">
+        <div class="loading"><i class="fas fa-spinner"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="section" id="sec-profile">
+    <div class="page-header">
+      <h1>My Profile</h1>
+      <p>Your account information and statistics</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:20px">
+      <div class="card">
+        <div class="card-header"><h3>Account Details</h3></div>
+        <div class="card-body" id="profileDetails">
+          <div class="loading"><i class="fas fa-spinner"></i></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Complaint Statistics</h3></div>
+        <div class="card-body" id="profileStats">
+          <div class="loading"><i class="fas fa-spinner"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end main -->
+
+<!-- VIEW COMPLAINT MODAL -->
+<div class="modal-overlay" id="viewModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle">Complaint Details</h3>
+      <button class="modal-close" onclick="closeModal('viewModal')"><i class="fas fa-xmark"></i></button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('viewModal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script>
+const API = window.API;
+let currentUser = null;
+let allComplaints = [];
+
+function getToken() { return localStorage.getItem('token'); }
+function headers() {
+  return { 'Content-Type':'application/json', 'Authorization':`Bearer ${getToken()}` };
+}
+
+// AUTH CHECK
+function checkAuth() {
+  const token = getToken();
+  if (!token) { window.location.href='index.html'; return false; }
+  currentUser = JSON.parse(localStorage.getItem('user') || '{}');
+  if (currentUser.role === 'admin') { window.location.href='admin-dashboard.html'; }
+  document.getElementById('sidebarName').textContent = currentUser.name || 'User';
+  document.getElementById('sidebarAvatar').textContent = (currentUser.name || 'U')[0].toUpperCase();
+  return true;
+}
+
+function logout() {
+  localStorage.clear();
+  window.location.href = 'index.html';
+}
+
+// SECTION NAVIGATION
+function showSection(name) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('sec-'+name).classList.add('active');
+  event && event.currentTarget && event.currentTarget.classList.add('active');
+
+  // Load data when section activated
+  if (name==='dashboard') loadDashboard();
+  if (name==='complaints') loadComplaints();
+  if (name==='notifications') loadNotifications();
+  if (name==='profile') loadProfile();
+}
+
+// TOAST
+function showToast(msg, type='success') {
+  const t = document.getElementById('toast');
+  t.className = 'toast show ' + type;
+  t.innerHTML = `<i class="fas fa-${type==='success'?'circle-check':'circle-xmark'}"></i> ${msg}`;
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// MODAL
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+// STATUS BADGE
+function statusBadge(s) {
+  const cls = s.replace(' ','-');
+  return `<span class="badge-status ${cls}">${s}</span>`;
+}
+function priorityBadge(p) {
+  return `<span class="badge-priority ${p}">${p}</span>`;
+}
+
+// FORMAT DATE
+function fmtDate(d) {
+  if (!d) return '—';
+  return new Date(d).toLocaleDateString('en-IN', {day:'2-digit',month:'short',year:'numeric'});
+}
+
+// DASHBOARD
+async function loadDashboard() {
+  try {
+    const res = await fetch(`${API}/my-stats`, { headers:headers() });
+    if (res.status===401) { logout(); return; }
+    const data = await res.json();
+    const s = data.data;
+    document.getElementById('statTotal').textContent = s.total_complaints || 0;
+    document.getElementById('statPending').textContent = s.by_status?.pending || 0;
+    document.getElementById('statResolved').textContent = s.by_status?.resolved || 0;
+    document.getElementById('statEscalated').textContent = s.by_status?.escalated || 0;
+  } catch(e) {}
+
+  // Load recent 5 complaints
+  try {
+    const res = await fetch(`${API}/complaints`, { headers:headers() });
+    const data = await res.json();
+    const complaints = (data.data?.complaints || []).slice(0,5);
+    allComplaints = data.data?.complaints || [];
+    const el = document.getElementById('recentComplaints');
+    if (!complaints.length) {
+      el.innerHTML = `<div class="empty-state"><i class="fas fa-inbox"></i><h3>No complaints yet</h3><p>Submit your first complaint to get started.</p></div>`;
+      return;
+    }
+    el.innerHTML = `<table>
+      <thead><tr>
+        <th>Complaint ID</th><th>Title</th><th>Category</th>
+        <th>Priority</th><th>Status</th><th>Date</th><th>Action</th>
+      </tr></thead>
+      <tbody>${complaints.map(c=>`
+        <tr>
+          <td><strong style="color:var(--blue)">${c.complaint_id}</strong></td>
+          <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.title}</td>
+          <td>${c.category}</td>
+          <td>${priorityBadge(c.priority)}</td>
+          <td>${statusBadge(c.status)}</td>
+          <td>${fmtDate(c.created_at)}</td>
+          <td><button class="btn btn-outline btn-sm" onclick="viewComplaint('${c.id}')">
+            <i class="fas fa-eye"></i> View
+          </button></td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+  } catch(e) {
+    document.getElementById('recentComplaints').innerHTML = '<div class="empty-state"><i class="fas fa-exclamation-circle"></i><h3>Failed to load</h3></div>';
+  }
+}
+
+// LOAD ALL COMPLAINTS
+async function loadComplaints() {
+  const el = document.getElementById('complaintsList');
+  el.innerHTML = '<div class="loading"><i class="fas fa-spinner"></i></div>';
+  try {
+    const res = await fetch(`${API}/complaints`, { headers:headers() });
+    if (res.status===401) { logout(); return; }
+    const data = await res.json();
+    const complaints = data.data?.complaints || [];
+    if (!complaints.length) {
+      el.innerHTML = `<div class="empty-state"><i class="fas fa-inbox"></i><h3>No complaints yet</h3><p>You haven't submitted any complaints.</p></div>`;
+      return;
+    }
+    el.innerHTML = `<table>
+      <thead><tr>
+        <th>ID</th><th>Title</th><th>Category</th>
+        <th>Priority</th><th>Status</th><th>Date</th><th>Actions</th>
+      </tr></thead>
+      <tbody>${complaints.map(c=>`
+        <tr>
+          <td><strong style="color:var(--blue);font-size:12px">${c.complaint_id}</strong></td>
+          <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500">${c.title}</td>
+          <td><span style="font-size:12px">${c.category}</span></td>
+          <td>${priorityBadge(c.priority)}</td>
+          <td>${statusBadge(c.status)}</td>
+          <td><span style="font-size:12px">${fmtDate(c.created_at)}</span></td>
+          <td>
+            <button class="btn btn-outline btn-sm" onclick="viewComplaint('${c.id}')" style="margin-right:4px">
+              <i class="fas fa-eye"></i>
+            </button>
+            ${c.status==='Pending'?`<button class="btn btn-sm" style="background:#fef2f2;color:#b91c1c;border:none" onclick="deleteComplaint('${c.id}')">
+              <i class="fas fa-trash"></i>
+            </button>`:''}
+          </td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+  } catch(e) {
+    el.innerHTML = '<div class="empty-state"><i class="fas fa-exclamation-circle"></i><h3>Failed to load complaints</h3></div>';
+  }
+}
+
+// VIEW SINGLE COMPLAINT
+async function viewComplaint(id) {
+  try {
+    const res = await fetch(`${API}/complaints/${id}`, { headers:headers() });
+    const data = await res.json();
+    const c = data.data?.complaint;
+    if (!c) return;
+
+    document.getElementById('modalTitle').textContent = c.complaint_id;
+    const history = (c.status_history||[]).map(h=>`
+      <div class="history-item">
+        <div class="history-dot" style="background:${statusColor(h.status)}20;color:${statusColor(h.status)}">
+          <i class="fas fa-circle-dot"></i>
+        </div>
+        <div>
+          <div style="font-weight:600;font-size:13px">${h.status}</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">${h.note||''}</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:2px">${fmtDate(h.changed_at)}</div>
+        </div>
+      </div>`).join('');
+
+    const attachments = (c.attachments||[]).map(a=>`
+      <a href="${API}/uploads/${a.filename}?token=${getToken()}" target="_blank"
+         style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:#f0f6ff;border-radius:8px;text-decoration:none;font-size:12px;color:var(--blue);margin:4px">
+        <i class="fas fa-paperclip"></i> ${a.original_name||a.filename}
+      </a>`).join('') || '<span style="color:var(--muted);font-size:13px">No attachments</span>';
+
+    document.getElementById('modalBody').innerHTML = `
+      <div style="margin-bottom:20px">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+          ${statusBadge(c.status)} ${priorityBadge(c.priority)}
+          <span style="font-size:12px;color:var(--muted);padding:3px 10px;background:#f8fafc;border-radius:20px">${c.category}</span>
+        </div>
+        <h4 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:10px">${c.title}</h4>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">${c.description}</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+        <div style="padding:12px;background:#f8fafc;border-radius:10px">
+          <div style="font-size:11px;color:var(--muted);margin-bottom:4px">SUBMITTED</div>
+          <div style="font-size:13px;font-weight:500">${fmtDate(c.created_at)}</div>
+        </div>
+        <div style="padding:12px;background:#f8fafc;border-radius:10px">
+          <div style="font-size:11px;color:var(--muted);margin-bottom:4px">ESCALATIONS</div>
+          <div style="font-size:13px;font-weight:500">${c.escalation_count||0} time(s)</div>
+        </div>
+      </div>
+      <div style="margin-bottom:20px">
+        <div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px">Attachments</div>
+        ${attachments}
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px">Status History</div>
+        ${history}
+      </div>`;
+    document.getElementById('viewModal').classList.add('open');
+  } catch(e) { showToast('Failed to load complaint details','error'); }
+}
+
+function statusColor(s) {
+  const map = { Pending:'#f59e0b', Assigned:'#3b82f6', 'In Progress':'#8b5cf6',
+    Escalated:'#ef4444', Resolved:'#22c55e', Closed:'#94a3b8' };
+  return map[s] || '#64748b';
+}
+
+// SUBMIT COMPLAINT
+document.getElementById('compTitle').addEventListener('input', function() {
+  document.getElementById('titleCount').textContent = this.value.length;
+});
+document.getElementById('compDesc').addEventListener('input', function() {
+  document.getElementById('descCount').textContent = this.value.length;
+});
+
+function resetForm() {
+  document.getElementById('submitForm').reset();
+  document.getElementById('titleCount').textContent='0';
+  document.getElementById('descCount').textContent='0';
+  document.getElementById('submitAlert').innerHTML='';
+}
+
+document.getElementById('submitForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.disabled=true;
+  btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+  const title = document.getElementById('compTitle').value;
+  const description = document.getElementById('compDesc').value;
+  const category = document.getElementById('compCategory').value;
+  const priority = document.getElementById('compPriority').value;
+  const alertEl = document.getElementById('submitAlert');
+
+  try {
+    const res = await fetch(`${API}/complaints`, {
+      method:'POST', headers:headers(),
+      body:JSON.stringify({ title, description, category, priority })
+    });
+    const data = await res.json();
+
+    if (res.ok && data.status==='success') {
+      // Upload file if selected
+      const fileInput = document.getElementById('compFile');
+      if (fileInput.files[0] && data.data?.id) {
+        const fd = new FormData();
+        fd.append('file', fileInput.files[0]);
+        await fetch(`${API}/complaints/${data.data.id}/upload`, {
+          method:'POST',
+          headers:{ 'Authorization':`Bearer ${getToken()}` },
+          body: fd
+        });
+      }
+      alertEl.innerHTML=`<div style="padding:12px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;color:#15803d;font-size:13px;display:flex;align-items:center;gap:8px"><i class="fas fa-circle-check"></i> Complaint submitted! ID: <strong>${data.data?.complaint_id}</strong></div>`;
+      resetForm();
+      showToast('Complaint submitted successfully!');
+      setTimeout(()=>showSection('complaints'), 2000);
+    } else {
+      alertEl.innerHTML=`<div style="padding:12px;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;color:#b91c1c;font-size:13px;display:flex;align-items:center;gap:8px"><i class="fas fa-circle-exclamation"></i> ${data.error||'Submission failed'}</div>`;
+    }
+  } catch(err) {
+    alertEl.innerHTML=`<div style="padding:12px;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;color:#b91c1c;font-size:13px">Cannot connect to server.</div>`;
+  }
+  btn.disabled=false;
+  btn.innerHTML='<i class="fas fa-paper-plane"></i> Submit Complaint';
+});
+
+// DELETE COMPLAINT
+async function deleteComplaint(id) {
+  if (!confirm('Delete this complaint? This action cannot be undone.')) return;
+  try {
+    const res = await fetch(`${API}/complaints/${id}`, { method:'DELETE', headers:headers() });
+    const data = await res.json();
+    if (res.ok) { showToast('Complaint deleted'); loadComplaints(); }
+    else showToast(data.error||'Delete failed','error');
+  } catch(e) { showToast('Error deleting complaint','error'); }
+}
+
+// NOTIFICATIONS
+async function loadNotifications() {
+  const el = document.getElementById('notificationsList');
+  el.innerHTML='<div class="loading"><i class="fas fa-spinner"></i></div>';
+  try {
+    const res = await fetch(`${API}/notifications`, { headers:headers() });
+    if (res.status===401) { logout(); return; }
+    const data = await res.json();
+    const notifs = data.data?.notifications || [];
+    const unread = data.data?.unread || 0;
+
+    document.getElementById('notifBadge').style.display = unread>0?'block':'none';
+    document.getElementById('notifBadge').textContent = unread;
+    document.getElementById('notifHeader').textContent = `Notifications (${unread} unread)`;
+
+    if (!notifs.length) {
+      el.innerHTML=`<div class="empty-state"><i class="fas fa-bell-slash"></i><h3>No notifications</h3><p>You'll be notified about complaint updates here.</p></div>`;
+      return;
+    }
+
+    const typeMap = {
+      complaint_created:{ icon:'paper-plane', cls:'info' },
+      status_updated:{ icon:'arrows-rotate', cls:'info' },
+      complaint_assigned:{ icon:'user-check', cls:'success' },
+      escalation_alert:{ icon:'triangle-exclamation', cls:'danger' },
+      complaint_resolved:{ icon:'circle-check', cls:'success' },
+      complaint_closed:{ icon:'lock', cls:'warning' }
+    };
+
+    el.innerHTML = notifs.map(n => {
+      const t = typeMap[n.type] || { icon:'bell', cls:'info' };
+      return `<div class="notif-item ${!n.is_read?'notif-unread':''}">
+        <div class="notif-icon ${t.cls}"><i class="fas fa-${t.icon}"></i></div>
+        <div style="flex:1">
+          <div class="notif-msg">${n.message}</div>
+          <div class="notif-time">${fmtDate(n.created_at)}</div>
+        </div>
+        ${!n.is_read?`<button class="btn btn-sm" style="background:#eff6ff;color:var(--blue);border:none;white-space:nowrap" onclick="markRead('${n.id}')">Mark read</button>`:''}
+        <button class="btn btn-sm" style="background:#fef2f2;color:#b91c1c;border:none;margin-left:4px" onclick="deleteNotif('${n.id}')"><i class="fas fa-trash"></i></button>
+      </div>`;
+    }).join('');
+  } catch(e) {
+    el.innerHTML='<div class="empty-state"><i class="fas fa-exclamation-circle"></i><h3>Failed to load</h3></div>';
+  }
+}
+
+async function markRead(id) {
+  await fetch(`${API}/notifications/${id}/read`, { method:'PUT', headers:headers() });
+  loadNotifications();
+}
+
+async function markAllRead() {
+  await fetch(`${API}/notifications/read-all`, { method:'PUT', headers:headers() });
+  showToast('All notifications marked as read');
+  loadNotifications();
+}
+
+async function deleteNotif(id) {
+  await fetch(`${API}/notifications/${id}`, { method:'DELETE', headers:headers() });
+  loadNotifications();
+}
+
+// PROFILE
+async function loadProfile() {
+  try {
+    const res1 = await fetch(`${API}/profile`, { headers:headers() });
+    const d1 = await res1.json();
+    const u = d1.data?.user || {};
+    document.getElementById('profileDetails').innerHTML = `
+      <div style="text-align:center;margin-bottom:24px">
+        <div style="width:72px;height:72px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#fff;margin:0 auto 12px">${(u.name||'U')[0].toUpperCase()}</div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700">${u.name||''}</h3>
+        <span style="font-size:12px;color:var(--muted)">${u.role||'user'}</span>
+      </div>
+      ${infoRow('fas fa-envelope','Email',u.email)}
+      ${infoRow('fas fa-phone','Phone',u.phone||'Not provided')}
+      ${infoRow('fas fa-calendar','Member Since',fmtDate(u.created_at))}
+      ${infoRow('fas fa-circle','Status',u.is_active?'Active':'Disabled')}`;
+
+    const res2 = await fetch(`${API}/my-stats`, { headers:headers() });
+    const d2 = await res2.json();
+    const s = d2.data || {};
+    const st = s.by_status || {};
+    const statuses = [
+      {label:'Pending',key:'pending',color:'var(--accent)'},
+      {label:'Assigned',key:'assigned',color:'var(--blue)'},
+      {label:'In Progress',key:'in_progress',color:'#8b5cf6'},
+      {label:'Escalated',key:'escalated',color:'var(--escalated)'},
+      {label:'Resolved',key:'resolved',color:'var(--resolved)'},
+      {label:'Closed',key:'closed',color:'var(--muted)'}
+    ];
+    document.getElementById('profileStats').innerHTML = `
+      <div style="text-align:center;margin-bottom:24px">
+        <div style="font-family:'Syne',sans-serif;font-size:42px;font-weight:800;color:var(--blue)">${s.total_complaints||0}</div>
+        <div style="font-size:13px;color:var(--muted)">Total Complaints Submitted</div>
+      </div>
+      ${statuses.map(x=>`
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f1f5f9">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:10px;height:10px;border-radius:50%;background:${x.color}"></div>
+            <span style="font-size:13px">${x.label}</span>
+          </div>
+          <strong style="font-family:'Syne',sans-serif;font-size:16px">${st[x.key]||0}</strong>
+        </div>`).join('')}`;
+  } catch(e) {}
+}
+
+function infoRow(icon, label, value) {
+  return `<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #f1f5f9">
+    <div style="width:34px;height:34px;background:#f0f6ff;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:13px"><i class="${icon}"></i></div>
+    <div><div style="font-size:11px;color:var(--muted)">${label}</div><div style="font-size:13px;font-weight:500;margin-top:2px">${value}</div></div>
+  </div>`;
+}
+
+// INIT
+if (checkAuth()) {
+  loadDashboard();
+  // Load unread count for badge
+  fetch(`${API}/notifications/count`,{headers:headers()}).then(r=>r.json()).then(d=>{
+    const count=d.data?.unread_count||0;
+    if(count>0){
+      document.getElementById('notifBadge').style.display='block';
+      document.getElementById('notifBadge').textContent=count;
+    }
+  }).catch(()=>{});
+}
+</script>
+</body>
+</html>

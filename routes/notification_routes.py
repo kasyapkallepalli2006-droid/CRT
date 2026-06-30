@@ -1,4 +1,3 @@
-# routes/notification_routes.py
 from flask import Blueprint, request
 from middleware.auth_middleware import token_required
 from services.notification_service import (

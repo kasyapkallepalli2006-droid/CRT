@@ -198,3 +198,25 @@
 2026-06-02 09:51:08,120 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
 2026-06-02 09:51:08,131 | WARNING | _internal |  * Debugger is active!
 2026-06-02 09:51:08,134 | INFO | _internal |  * Debugger PIN: 138-110-176
+2026-06-02 11:26:36,428 | INFO | logger | Logger initialized successfully
+2026-06-02 11:26:36,602 | INFO | app | All blueprints registered successfully
+2026-06-02 11:26:36,603 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 11:26:36,603 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 11:26:36,658 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-02 11:26:36,658 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-02 11:26:36,663 | INFO | _internal |  * Restarting with stat
+2026-06-02 11:26:37,866 | INFO | logger | Logger initialized successfully
+2026-06-02 11:26:37,921 | INFO | app | All blueprints registered successfully
+2026-06-02 11:26:37,922 | INFO | app | Starting Complaint Management Platform...
+2026-06-02 11:26:37,922 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-02 11:26:37,948 | WARNING | _internal |  * Debugger is active!
+2026-06-02 11:26:37,951 | INFO | _internal |  * Debugger PIN: 134-684-442
+2026-06-02 11:26:50,642 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 11:26:50] "GET /docs HTTP/1.1" 200 -
+2026-06-02 11:26:50,887 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 11:26:50] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 200 -
+2026-06-02 11:26:50,991 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 11:26:50] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 200 -
+2026-06-02 11:26:51,358 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 11:26:51] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 200 -
+2026-06-02 11:26:52,379 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 11:26:52] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2026-06-02 11:26:52,615 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 11:26:52] "GET /apispec.json HTTP/1.1" 200 -
+2026-06-02 11:26:52,616 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 11:26:52] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 200 -
+2026-06-02 11:33:39,764 | INFO | _internal | 127.0.0.1 - - [02/Jun/2026 11:33:39] "[31m[1mGET /api/complaints HTTP/1.1[0m" 401 -

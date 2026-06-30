@@ -25,6 +25,14 @@ swagger_template = {
     1. Use **POST /api/auth/register** to create an account
     2. Use **POST /api/auth/login** to get your JWT token
     3. Click the **Authorize** button (🔒) at the top right
-    4. Enter your token in this exact format:"""
+    4. Enter your token in this exact format: `Bearer <your_token_here>`"""
+    },
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\""
+        }
     }
 }

@@ -4,6 +4,7 @@ from config import Config
 from database.connections import db
 from swagger_config import swagger_config, swagger_template
 from utils.logger import logger
+from flask_cors import CORS 
 
 from routes.auth_routes import auth_bp
 from routes.complaint_routes import complaint_bp
@@ -11,8 +12,11 @@ from routes.user_routes import user_bp
 from routes.escalation_routes import escalation_bp
 from routes.upload_routes import upload_bp
 from routes.notification_routes import notification_bp
+from routes.analytics_routes import analytics_bp
+        
 
 app = Flask(__name__)
+CORS(app)                          
 app.config.from_object(Config)
 
 swagger = Swagger(app, config=swagger_config, template=swagger_template)
@@ -23,6 +27,7 @@ app.register_blueprint(user_bp, url_prefix='/api')
 app.register_blueprint(escalation_bp, url_prefix='/api')
 app.register_blueprint(upload_bp, url_prefix='/api')
 app.register_blueprint(notification_bp, url_prefix='/api')
+app.register_blueprint(analytics_bp, url_prefix='/api/analytics')
 
 logger.info("All blueprints registered successfully")
 
@@ -97,6 +102,12 @@ def server_error(error):
 
 
 if __name__ == '__main__':
+    import os
     logger.info("Starting Complaint Management Platform...")
-    logger.info("Swagger UI available at: http://127.0.0.1:5000/docs")
-    app.run(debug=True)
+    
+    # Render binds dynamically to the PORT env variable and expects binding to 0.0.0.0
+    port = int(os.environ.get('PORT', 5000))
+    debug_mode = os.environ.get('FLASK_ENV') == 'development'
+    
+    logger.info(f"Swagger UI available locally at: http://127.0.0.1:{port}/docs")
+    app.run(host='0.0.0.0', port=port, debug=debug_mode)

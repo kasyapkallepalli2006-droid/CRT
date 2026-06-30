@@ -1,4 +1,3 @@
-# routes/escalation_routes.py
 from flask import Blueprint, request
 from middleware.auth_middleware import token_required, admin_required
 from services.escalation_service import (

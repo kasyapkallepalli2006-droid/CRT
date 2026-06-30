@@ -1,6 +1,5 @@
-# routes/upload_routes.py
-import os
-from flask import Blueprint, request, send_from_directory
+from flask import Blueprint, request, send_from_directory, jsonify
+from database.connections import db
 from middleware.auth_middleware import token_required
 from services.upload_service import (
     upload_file_to_complaint,
@@ -186,4 +185,14 @@ def serve_file(current_user, filename):
       404:
         description: File not found
     """
+    complaint = db.complaints.find_one({"attachments.filename": filename})
+    if not complaint:
+        return jsonify({"status": "fail", "error": "File not found or unauthorized"}), 404
+
+    is_owner = str(complaint['user_id']) == str(current_user['_id'])
+    is_admin = current_user.get('role') == 'admin'
+
+    if not is_owner and not is_admin:
+        return jsonify({"status": "fail", "error": "You are not authorized to view this file"}), 403
+
     return send_from_directory(Config.UPLOAD_FOLDER, filename)

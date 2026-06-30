@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register — Complaint Management Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:#0f1f4b; --navy-mid:#1a2f6b; --blue:#2563eb;
+      --blue-light:#3b82f6; --accent:#f59e0b; --bg:#f0f4ff;
+      --white:#ffffff; --text:#0f172a; --muted:#64748b;
+      --radius:16px; --shadow:0 20px 60px rgba(15,31,75,0.15);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'DM Sans',sans-serif; background:var(--bg);
+      min-height:100vh; display:flex; align-items:center;
+      justify-content:center; overflow:hidden; position:relative;
+    }
+    body::before {
+      content:''; position:fixed; top:-200px; left:-200px;
+      width:600px; height:600px;
+      background:radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 70%);
+    }
+    body::after {
+      content:''; position:fixed; bottom:-200px; right:-200px;
+      width:600px; height:600px;
+      background:radial-gradient(circle,rgba(245,158,11,0.10) 0%,transparent 70%);
+    }
+    .container {
+      display:grid; grid-template-columns:1fr 1.3fr;
+      width:940px; min-height:600px;
+      background:var(--white); border-radius:var(--radius);
+      box-shadow:var(--shadow); overflow:hidden;
+      animation:slideUp 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    @keyframes slideUp {
+      from{opacity:0;transform:translateY(30px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    .panel-left {
+      background:linear-gradient(145deg,var(--navy) 0%,var(--navy-mid) 60%,#1e3a8a 100%);
+      padding:52px 40px; display:flex; flex-direction:column;
+      justify-content:space-between; position:relative; overflow:hidden;
+    }
+    .panel-left::before {
+      content:''; position:absolute; top:-80px; right:-80px;
+      width:260px; height:260px; border-radius:50%;
+      border:40px solid rgba(255,255,255,0.04);
+    }
+    .panel-left::after {
+      content:''; position:absolute; bottom:-60px; left:-60px;
+      width:200px; height:200px; border-radius:50%;
+      border:30px solid rgba(255,255,255,0.04);
+    }
+    .brand { z-index:1; }
+    .brand-icon {
+      width:52px; height:52px; background:var(--accent);
+      border-radius:14px; display:flex; align-items:center;
+      justify-content:center; font-size:22px; color:var(--navy);
+      margin-bottom:20px;
+    }
+    .brand h1 {
+      font-family:'Syne',sans-serif; font-size:24px; font-weight:800;
+      color:var(--white); line-height:1.2; letter-spacing:-0.5px;
+    }
+    .brand p { color:rgba(255,255,255,0.55); font-size:13px; margin-top:8px; }
+    .steps { z-index:1; }
+    .step {
+      display:flex; align-items:flex-start; gap:14px; margin-bottom:20px;
+    }
+    .step-num {
+      width:28px; height:28px; min-width:28px;
+      background:var(--accent); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Syne',sans-serif; font-size:12px;
+      font-weight:800; color:var(--navy);
+    }
+    .step h4 {
+      font-family:'Syne',sans-serif; font-size:13px; font-weight:700;
+      color:var(--white);
+    }
+    .step p { font-size:12px; color:rgba(255,255,255,0.45); margin-top:2px; }
+    .panel-right { padding:44px 44px; display:flex; flex-direction:column; justify-content:center; }
+    .panel-right h2 {
+      font-family:'Syne',sans-serif; font-size:26px; font-weight:800;
+      color:var(--text); letter-spacing:-0.5px;
+    }
+    .panel-right .subtitle { color:var(--muted); font-size:14px; margin-top:6px; margin-bottom:28px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .form-group { margin-bottom:16px; }
+    .form-group label { display:block; font-size:13px; font-weight:500; color:var(--text); margin-bottom:6px; }
+    .input-wrap { position:relative; }
+    .input-wrap i { position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted); font-size:13px; }
+    .form-group input, .form-group select {
+      width:100%; padding:11px 14px 11px 38px;
+      border:1.5px solid #e2e8f0; border-radius:10px;
+      font-size:13px; font-family:'DM Sans',sans-serif;
+      color:var(--text); background:#f8fafc;
+      transition:all 0.2s; outline:none; appearance:none;
+    }
+    .form-group select { padding-left:38px; }
+    .form-group input:focus, .form-group select:focus {
+      border-color:var(--blue); background:var(--white);
+      box-shadow:0 0 0 3px rgba(37,99,235,0.1);
+    }
+    .btn-primary {
+      width:100%; padding:13px; background:var(--blue);
+      color:var(--white); border:none; border-radius:10px;
+      font-size:15px; font-family:'Syne',sans-serif; font-weight:700;
+      cursor:pointer; transition:all 0.2s; margin-top:6px;
+    }
+    .btn-primary:hover { background:var(--blue-light); transform:translateY(-1px); }
+    .btn-primary:disabled { opacity:0.7; cursor:not-allowed; transform:none; }
+    .link-row { text-align:center; margin-top:18px; font-size:13px; color:var(--muted); }
+    .link-row a { color:var(--blue); text-decoration:none; font-weight:500; }
+    .link-row a:hover { text-decoration:underline; }
+    .alert {
+      padding:11px 14px; border-radius:10px; font-size:13px;
+      margin-bottom:16px; display:none; align-items:center; gap:8px;
+    }
+    .alert.error { background:#fef2f2; border:1px solid #fecaca; color:#dc2626; display:flex; }
+    .alert.success { background:#f0fdf4; border:1px solid #bbf7d0; color:#16a34a; display:flex; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="panel-left">
+      <div class="brand">
+        <div class="brand-icon"><i class="fas fa-shield-halved"></i></div>
+        <h1>Complaint Management Platform</h1>
+        <p>Join thousands of users who trust our platform</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h4>Create Your Account</h4>
+            <p>Register with your email and details</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h4>Submit a Complaint</h4>
+            <p>Describe your issue clearly with attachments</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h4>Track Resolution</h4>
+            <p>Get notified at every step of the process</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-right">
+      <h2>Create Account</h2>
+      <p class="subtitle">Fill in your details to get started</p>
+      <div class="alert" id="alertBox"></div>
+      <form id="registerForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <div class="input-wrap">
+              <i class="fas fa-user"></i>
+              <input type="text" id="name" placeholder="Arjun Kumar" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <div class="input-wrap">
+              <i class="fas fa-phone"></i>
+              <input type="text" id="phone" placeholder="9876543210"/>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <div class="input-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" placeholder="you@email.com" required/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Password</label>
+            <div class="input-wrap">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="password" placeholder="Min 6 characters" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Register As</label>
+            <div class="input-wrap">
+              <i class="fas fa-user-tag"></i>
+              <select id="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary" id="regBtn">
+          <i class="fas fa-user-plus"></i> Create Account
+        </button>
+      </form>
+      <div class="link-row">Already have an account? <a href="index.html">Sign in</a></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script>
+    const API = window.API;
+
+    function showAlert(msg, type='error') {
+      const box = document.getElementById('alertBox');
+      box.className = 'alert ' + type;
+      box.innerHTML = `<i class="fas fa-${type==='error'?'circle-exclamation':'circle-check'}"></i> ${msg}`;
+    }
+
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('regBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating account...';
+
+      const payload = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+        phone: document.getElementById('phone').value,
+        role: document.getElementById('role').value
+      };
+
+      try {
+        const res = await fetch(`${API}/auth/register`, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (res.ok && data.status === 'success') {
+          showAlert('Account created! Redirecting to login...', 'success');
+          setTimeout(() => window.location.href = 'index.html', 1200);
+        } else {
+          showAlert(data.error || 'Registration failed.');
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-user-plus"></i> Create Account';
+        }
+      } catch (err) {
+        showAlert('Cannot connect to server. Make sure Flask is running.');
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-user-plus"></i> Create Account';
+      }
+    });
+  </script>
+</body>
+</html>

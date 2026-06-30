@@ -1,0 +1,98 @@
+2026-06-21 10:14:22,739 | INFO | logger | Logger initialized successfully
+2026-06-21 10:14:22,802 | INFO | app | All blueprints registered successfully
+2026-06-21 10:14:22,803 | INFO | app | Starting Complaint Management Platform...
+2026-06-21 10:14:22,803 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-21 10:14:22,841 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-21 10:14:22,841 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-21 10:14:22,842 | INFO | _internal |  * Restarting with stat
+2026-06-21 10:14:23,229 | INFO | logger | Logger initialized successfully
+2026-06-21 10:14:23,257 | INFO | app | All blueprints registered successfully
+2026-06-21 10:14:23,257 | INFO | app | Starting Complaint Management Platform...
+2026-06-21 10:14:23,257 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-21 10:14:23,269 | WARNING | _internal |  * Debugger is active!
+2026-06-21 10:14:23,272 | INFO | _internal |  * Debugger PIN: 952-586-876
+2026-06-21 10:14:48,192 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:14:48] "OPTIONS /api/auth/register HTTP/1.1" 200 -
+2026-06-21 10:14:48,227 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:14:48] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 409 -
+2026-06-21 10:15:02,215 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:02] "OPTIONS /api/auth/register HTTP/1.1" 200 -
+2026-06-21 10:15:02,229 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:02] "[31m[1mPOST /api/auth/register HTTP/1.1[0m" 409 -
+2026-06-21 10:15:24,466 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:24] "OPTIONS /api/auth/register HTTP/1.1" 200 -
+2026-06-21 10:15:24,913 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:24] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2026-06-21 10:15:43,464 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:43] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2026-06-21 10:15:43,890 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:43] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-21 10:15:49,329 | WARNING | app | 404 - Route not found
+2026-06-21 10:15:49,330 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:49] "OPTIONS /api/notifications/count HTTP/1.1" 200 -
+2026-06-21 10:15:49,331 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:49] "[33mOPTIONS /api/analytics/summary HTTP/1.1[0m" 404 -
+2026-06-21 10:15:49,332 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:49] "OPTIONS /api/admin/escalation/active HTTP/1.1" 200 -
+2026-06-21 10:15:49,360 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:49] "GET /api/admin/escalation/active HTTP/1.1" 200 -
+2026-06-21 10:15:49,381 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:49] "GET /api/notifications/count HTTP/1.1" 200 -
+2026-06-21 10:15:57,092 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:57] "OPTIONS /api/admin/complaints HTTP/1.1" 200 -
+2026-06-21 10:15:57,205 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:15:57] "[35m[1mGET /api/admin/complaints HTTP/1.1[0m" 500 -
+2026-06-21 10:16:02,533 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:02] "OPTIONS /api/admin/escalation/active HTTP/1.1" 200 -
+2026-06-21 10:16:02,543 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:02] "GET /api/admin/escalation/active HTTP/1.1" 200 -
+2026-06-21 10:16:04,005 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:04] "OPTIONS /api/admin/complaints HTTP/1.1" 200 -
+2026-06-21 10:16:04,047 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:04] "[35m[1mGET /api/admin/complaints HTTP/1.1[0m" 500 -
+2026-06-21 10:16:07,321 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:07] "OPTIONS /api/admin/users HTTP/1.1" 200 -
+2026-06-21 10:16:07,334 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:07] "GET /api/admin/users HTTP/1.1" 200 -
+2026-06-21 10:16:22,254 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:22] "OPTIONS /api/admin/users HTTP/1.1" 200 -
+2026-06-21 10:16:22,262 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:22] "GET /api/admin/users HTTP/1.1" 200 -
+2026-06-21 10:16:23,358 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:23] "GET /api/admin/users HTTP/1.1" 200 -
+2026-06-21 10:16:35,564 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:35] "OPTIONS /api/admin/users/6a217385bb8f7119cd335bb6/toggle-status HTTP/1.1" 200 -
+2026-06-21 10:16:35,577 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:35] "PUT /api/admin/users/6a217385bb8f7119cd335bb6/toggle-status HTTP/1.1" 200 -
+2026-06-21 10:16:35,587 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:35] "OPTIONS /api/admin/users HTTP/1.1" 200 -
+2026-06-21 10:16:35,596 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:35] "GET /api/admin/users HTTP/1.1" 200 -
+2026-06-21 10:16:39,120 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:39] "GET /api/admin/users HTTP/1.1" 200 -
+2026-06-21 10:16:40,207 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:40] "GET /api/admin/users HTTP/1.1" 200 -
+2026-06-21 10:16:46,692 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:46] "OPTIONS /api/admin/users/6a217385bb8f7119cd335bb6/toggle-status HTTP/1.1" 200 -
+2026-06-21 10:16:46,699 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:46] "PUT /api/admin/users/6a217385bb8f7119cd335bb6/toggle-status HTTP/1.1" 200 -
+2026-06-21 10:16:46,709 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:46] "OPTIONS /api/admin/users HTTP/1.1" 200 -
+2026-06-21 10:16:46,718 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:16:46] "GET /api/admin/users HTTP/1.1" 200 -
+2026-06-21 10:18:14,111 | WARNING | app | 404 - Route not found
+2026-06-21 10:18:14,112 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:18:14] "OPTIONS /api/notifications/count HTTP/1.1" 200 -
+2026-06-21 10:18:14,112 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:18:14] "[33mOPTIONS /api/analytics/summary HTTP/1.1[0m" 404 -
+2026-06-21 10:18:14,115 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:18:14] "OPTIONS /api/admin/escalation/active HTTP/1.1" 200 -
+2026-06-21 10:18:14,122 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:18:14] "[31m[1mGET /api/notifications/count HTTP/1.1[0m" 401 -
+2026-06-21 10:18:14,124 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:18:14] "[31m[1mGET /api/admin/escalation/active HTTP/1.1[0m" 401 -
+2026-06-21 10:18:18,196 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:18:18] "[31m[1mGET /api/admin/escalation/active HTTP/1.1[0m" 401 -
+2026-06-21 10:18:20,860 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:18:20] "OPTIONS /api/admin/complaints HTTP/1.1" 200 -
+2026-06-21 10:18:20,867 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:18:20] "[31m[1mGET /api/admin/complaints HTTP/1.1[0m" 401 -
+2026-06-21 10:18:41,305 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:18:41] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2026-06-21 10:18:41,312 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:18:41] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+2026-06-21 10:22:31,960 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:22:31] "OPTIONS /api/auth/register HTTP/1.1" 200 -
+2026-06-21 10:22:32,371 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:22:32] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2026-06-21 10:22:53,467 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:22:53] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2026-06-21 10:22:53,893 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:22:53] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-21 10:22:54,782 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:22:54] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-21 10:22:54,783 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:22:54] "OPTIONS /api/notifications/count HTTP/1.1" 200 -
+2026-06-21 10:22:54,795 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:22:54] "GET /api/notifications/count HTTP/1.1" 200 -
+2026-06-21 10:22:54,804 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:22:54] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-21 10:22:54,811 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:22:54] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-21 10:22:54,818 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:22:54] "GET /api/complaints HTTP/1.1" 200 -
+2026-06-21 10:22:58,732 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:22:58] "GET /api/complaints HTTP/1.1" 200 -
+2026-06-21 10:23:00,568 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:23:00] "OPTIONS /api/notifications HTTP/1.1" 200 -
+2026-06-21 10:23:00,575 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:23:00] "GET /api/notifications HTTP/1.1" 200 -
+2026-06-21 10:23:01,599 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:23:01] "OPTIONS /api/profile HTTP/1.1" 200 -
+2026-06-21 10:23:01,606 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:23:01] "GET /api/profile HTTP/1.1" 200 -
+2026-06-21 10:23:01,619 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:23:01] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-21 10:23:01,632 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:23:01] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-21 10:23:03,600 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:23:03] "GET /api/notifications HTTP/1.1" 200 -
+2026-06-21 10:23:21,804 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:23:21] "OPTIONS /api/profile HTTP/1.1" 200 -
+2026-06-21 10:23:21,812 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:23:21] "GET /api/profile HTTP/1.1" 200 -
+2026-06-21 10:23:21,823 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:23:21] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-21 10:23:21,840 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:23:21] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-21 10:27:10,982 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:10] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2026-06-21 10:27:11,394 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:11] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-21 10:27:12,287 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:12] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-21 10:27:12,289 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:12] "OPTIONS /api/notifications/count HTTP/1.1" 200 -
+2026-06-21 10:27:12,297 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:12] "GET /api/notifications/count HTTP/1.1" 200 -
+2026-06-21 10:27:12,305 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:12] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-21 10:27:12,311 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:12] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-21 10:27:12,324 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:12] "GET /api/complaints HTTP/1.1" 200 -
+2026-06-21 10:27:15,676 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:15] "GET /api/complaints HTTP/1.1" 200 -
+2026-06-21 10:27:17,335 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:17] "OPTIONS /api/notifications HTTP/1.1" 200 -
+2026-06-21 10:27:17,341 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:17] "GET /api/notifications HTTP/1.1" 200 -
+2026-06-21 10:27:18,284 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:18] "OPTIONS /api/profile HTTP/1.1" 200 -
+2026-06-21 10:27:18,291 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:18] "GET /api/profile HTTP/1.1" 200 -
+2026-06-21 10:27:18,304 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:18] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-21 10:27:18,318 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:18] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-21 10:27:20,144 | INFO | _internal | 127.0.0.1 - - [21/Jun/2026 10:27:20] "GET /api/notifications HTTP/1.1" 200 -

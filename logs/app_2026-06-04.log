@@ -1,0 +1,132 @@
+2026-06-04 11:26:12,441 | INFO | logger | Logger initialized successfully
+2026-06-04 11:26:12,554 | INFO | app | All blueprints registered successfully
+2026-06-04 11:26:12,556 | INFO | app | Starting Complaint Management Platform...
+2026-06-04 11:26:12,556 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-04 11:26:12,637 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-04 11:26:12,637 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-04 11:26:12,639 | INFO | _internal |  * Restarting with stat
+2026-06-04 11:26:13,237 | INFO | logger | Logger initialized successfully
+2026-06-04 11:26:13,285 | INFO | app | All blueprints registered successfully
+2026-06-04 11:26:13,287 | INFO | app | Starting Complaint Management Platform...
+2026-06-04 11:26:13,287 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-04 11:26:13,306 | WARNING | _internal |  * Debugger is active!
+2026-06-04 11:26:13,310 | INFO | _internal |  * Debugger PIN: 191-868-612
+2026-06-04 11:44:14,287 | WARNING | app | 404 - Route not found
+2026-06-04 11:44:14,302 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:44:14] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:44:38,525 | WARNING | app | 404 - Route not found
+2026-06-04 11:44:38,527 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:44:38] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:44:40,017 | WARNING | app | 404 - Route not found
+2026-06-04 11:44:40,019 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:44:40] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:44:40,229 | WARNING | app | 404 - Route not found
+2026-06-04 11:44:40,231 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:44:40] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:44:40,455 | WARNING | app | 404 - Route not found
+2026-06-04 11:44:40,461 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:44:40] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:01,731 | INFO | logger | Logger initialized successfully
+2026-06-04 11:45:01,822 | INFO | app | All blueprints registered successfully
+2026-06-04 11:45:01,824 | INFO | app | Starting Complaint Management Platform...
+2026-06-04 11:45:01,825 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-04 11:45:01,901 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-04 11:45:01,901 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-04 11:45:01,904 | INFO | _internal |  * Restarting with stat
+2026-06-04 11:45:02,719 | INFO | logger | Logger initialized successfully
+2026-06-04 11:45:02,767 | INFO | app | All blueprints registered successfully
+2026-06-04 11:45:02,768 | INFO | app | Starting Complaint Management Platform...
+2026-06-04 11:45:02,768 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-04 11:45:02,785 | WARNING | _internal |  * Debugger is active!
+2026-06-04 11:45:02,788 | INFO | _internal |  * Debugger PIN: 191-868-612
+2026-06-04 11:45:24,642 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:24,655 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:24] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:39,004 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:39,007 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:39] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:39,871 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:39,873 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:39] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:40,518 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:40,521 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:40] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:40,711 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:40,712 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:40] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:40,909 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:40,911 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:40] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:41,156 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:41,158 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:41] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:41,383 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:41,389 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:41] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:41,530 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:41,532 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:41] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:41,795 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:41,800 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:41] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:41,951 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:41,952 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:41] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 11:45:42,190 | WARNING | app | 404 - Route not found
+2026-06-04 11:45:42,197 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 11:45:42] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 18:08:59,435 | INFO | logger | Logger initialized successfully
+2026-06-04 18:08:59,475 | INFO | app | All blueprints registered successfully
+2026-06-04 18:08:59,476 | INFO | app | Starting Complaint Management Platform...
+2026-06-04 18:08:59,477 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-04 18:08:59,532 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-04 18:08:59,533 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-04 18:08:59,535 | INFO | _internal |  * Restarting with stat
+2026-06-04 18:09:00,032 | INFO | logger | Logger initialized successfully
+2026-06-04 18:09:00,064 | INFO | app | All blueprints registered successfully
+2026-06-04 18:09:00,065 | INFO | app | Starting Complaint Management Platform...
+2026-06-04 18:09:00,065 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-04 18:09:00,080 | WARNING | _internal |  * Debugger is active!
+2026-06-04 18:09:00,083 | INFO | _internal |  * Debugger PIN: 439-174-594
+2026-06-04 18:10:10,603 | WARNING | app | 404 - Route not found
+2026-06-04 18:10:10,605 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:10:10] "[33mOPTIONS /api/auth/register HTTP/1.1[0m" 404 -
+2026-06-04 18:15:16,819 | INFO | logger | Logger initialized successfully
+2026-06-04 18:15:16,906 | INFO | app | All blueprints registered successfully
+2026-06-04 18:15:16,907 | INFO | app | Starting Complaint Management Platform...
+2026-06-04 18:15:16,908 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-04 18:15:16,968 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-04 18:15:16,970 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-04 18:15:16,974 | INFO | _internal |  * Restarting with stat
+2026-06-04 18:15:18,046 | INFO | logger | Logger initialized successfully
+2026-06-04 18:15:18,098 | INFO | app | All blueprints registered successfully
+2026-06-04 18:15:18,100 | INFO | app | Starting Complaint Management Platform...
+2026-06-04 18:15:18,100 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-04 18:15:18,130 | WARNING | _internal |  * Debugger is active!
+2026-06-04 18:15:18,134 | INFO | _internal |  * Debugger PIN: 439-174-594
+2026-06-04 18:15:56,743 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:15:56] "OPTIONS /api/auth/register HTTP/1.1" 200 -
+2026-06-04 18:15:57,495 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:15:57] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2026-06-04 18:16:14,277 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:14] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2026-06-04 18:16:15,017 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:15] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-04 18:16:16,004 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:16] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-04 18:16:16,008 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:16] "OPTIONS /api/notifications/count HTTP/1.1" 200 -
+2026-06-04 18:16:16,103 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:16] "GET /api/notifications/count HTTP/1.1" 200 -
+2026-06-04 18:16:16,132 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:16] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-04 18:16:16,148 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:16] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-04 18:16:16,166 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:16] "GET /api/complaints HTTP/1.1" 200 -
+2026-06-04 18:16:21,168 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:21] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-04 18:16:21,202 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:21] "GET /api/complaints HTTP/1.1" 200 -
+2026-06-04 18:16:30,173 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:30] "OPTIONS /api/notifications HTTP/1.1" 200 -
+2026-06-04 18:16:30,199 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:30] "GET /api/notifications HTTP/1.1" 200 -
+2026-06-04 18:16:33,640 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:33] "OPTIONS /api/profile HTTP/1.1" 200 -
+2026-06-04 18:16:33,651 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:33] "GET /api/profile HTTP/1.1" 200 -
+2026-06-04 18:16:33,674 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:33] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-04 18:16:33,699 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:33] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-04 18:16:46,374 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:46] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-04 18:16:46,435 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:46] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-04 18:16:46,465 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:46] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-04 18:16:46,490 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:16:46] "GET /api/complaints HTTP/1.1" 200 -
+2026-06-04 18:17:08,056 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:17:08] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-04 18:17:08,097 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:17:08] "GET /api/complaints HTTP/1.1" 200 -
+2026-06-04 18:17:36,002 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:17:36] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-04 18:17:36,032 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 18:17:36] "[31m[1mPOST /api/complaints HTTP/1.1[0m" 400 -
+2026-06-04 20:24:48,921 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:24:48] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-04 20:24:48,993 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:24:48] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-04 20:24:49,013 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:24:49] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-04 20:24:49,032 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:24:49] "GET /api/complaints HTTP/1.1" 200 -
+2026-06-04 20:24:53,770 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:24:53] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-04 20:24:53,791 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:24:53] "GET /api/complaints HTTP/1.1" 200 -
+2026-06-04 20:26:52,891 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:26:52] "OPTIONS /api/profile HTTP/1.1" 200 -
+2026-06-04 20:26:52,920 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:26:52] "GET /api/profile HTTP/1.1" 200 -
+2026-06-04 20:26:52,943 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:26:52] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-04 20:26:52,990 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:26:52] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-04 20:26:54,767 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:26:54] "OPTIONS /api/notifications HTTP/1.1" 200 -
+2026-06-04 20:26:54,797 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:26:54] "GET /api/notifications HTTP/1.1" 200 -
+2026-06-04 20:26:55,656 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:26:55] "OPTIONS /api/notifications HTTP/1.1" 200 -
+2026-06-04 20:26:55,677 | INFO | _internal | 127.0.0.1 - - [04/Jun/2026 20:26:55] "GET /api/notifications HTTP/1.1" 200 -

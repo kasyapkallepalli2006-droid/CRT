@@ -1,0 +1,44 @@
+2026-06-09 18:40:24,772 | INFO | logger | Logger initialized successfully
+2026-06-09 18:40:24,825 | INFO | app | All blueprints registered successfully
+2026-06-09 18:40:24,825 | INFO | app | Starting Complaint Management Platform...
+2026-06-09 18:40:24,825 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-09 18:40:24,906 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-09 18:40:24,907 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-09 18:40:24,909 | INFO | _internal |  * Restarting with stat
+2026-06-09 18:40:25,503 | INFO | logger | Logger initialized successfully
+2026-06-09 18:40:25,548 | INFO | app | All blueprints registered successfully
+2026-06-09 18:40:25,548 | INFO | app | Starting Complaint Management Platform...
+2026-06-09 18:40:25,548 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-09 18:40:25,563 | WARNING | _internal |  * Debugger is active!
+2026-06-09 18:40:25,566 | INFO | _internal |  * Debugger PIN: 439-174-594
+2026-06-09 18:40:35,606 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:40:35] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-09 18:40:35,608 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:40:35] "OPTIONS /api/notifications/count HTTP/1.1" 200 -
+2026-06-09 18:40:35,629 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:40:35] "[31m[1mGET /api/notifications/count HTTP/1.1[0m" 401 -
+2026-06-09 18:40:35,642 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:40:35] "[31m[1mGET /api/my-stats HTTP/1.1[0m" 401 -
+2026-06-09 18:40:59,564 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:40:59] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2026-06-09 18:41:00,265 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:00] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-09 18:41:01,246 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:01] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-09 18:41:01,260 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:01] "OPTIONS /api/notifications/count HTTP/1.1" 200 -
+2026-06-09 18:41:01,355 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:01] "GET /api/notifications/count HTTP/1.1" 200 -
+2026-06-09 18:41:01,376 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:01] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-09 18:41:01,394 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:01] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-09 18:41:01,586 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:01] "[35m[1mGET /api/complaints HTTP/1.1[0m" 500 -
+2026-06-09 18:41:07,281 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:07] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-09 18:41:07,336 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:07] "[35m[1mGET /api/complaints HTTP/1.1[0m" 500 -
+2026-06-09 18:41:14,138 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:14] "OPTIONS /api/notifications HTTP/1.1" 200 -
+2026-06-09 18:41:14,159 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:14] "GET /api/notifications HTTP/1.1" 200 -
+2026-06-09 18:41:22,575 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:22] "OPTIONS /api/profile HTTP/1.1" 200 -
+2026-06-09 18:41:22,619 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:22] "GET /api/profile HTTP/1.1" 200 -
+2026-06-09 18:41:22,653 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:22] "OPTIONS /api/my-stats HTTP/1.1" 200 -
+2026-06-09 18:41:22,712 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:22] "GET /api/my-stats HTTP/1.1" 200 -
+2026-06-09 18:41:26,357 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:26] "OPTIONS /api/complaints HTTP/1.1" 200 -
+2026-06-09 18:41:26,421 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:41:26] "[35m[1mGET /api/complaints HTTP/1.1[0m" 500 -
+2026-06-09 18:43:33,317 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:43:33] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2026-06-09 18:43:33,967 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:43:33] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+2026-06-09 18:43:43,244 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:43:43] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2026-06-09 18:43:43,886 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:43:43] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+2026-06-09 18:44:03,955 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:44:03] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2026-06-09 18:44:04,606 | INFO | _internal | 127.0.0.1 - - [09/Jun/2026 18:44:04] "[31m[1mPOST /api/auth/login HTTP/1.1[0m" 401 -
+2026-06-09 19:03:05,360 | INFO | _internal |  * Detected change in 'C:\\Users\\kasya\\CRT\\database\\connections.py', reloading
+2026-06-09 19:03:05,859 | INFO | _internal |  * Restarting with stat

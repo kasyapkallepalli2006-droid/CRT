@@ -1,0 +1,63 @@
+2026-06-28 17:58:31,194 | INFO | logger | Logger initialized successfully
+2026-06-28 17:58:31,291 | INFO | app | All blueprints registered successfully
+2026-06-28 17:58:31,291 | INFO | app | Starting Complaint Management Platform...
+2026-06-28 17:58:31,291 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-28 17:58:31,415 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-28 17:58:31,415 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-28 17:58:31,417 | INFO | _internal |  * Restarting with stat
+2026-06-28 17:58:32,012 | INFO | logger | Logger initialized successfully
+2026-06-28 17:58:32,054 | INFO | app | All blueprints registered successfully
+2026-06-28 17:58:32,055 | INFO | app | Starting Complaint Management Platform...
+2026-06-28 17:58:32,055 | INFO | app | Swagger UI available at: http://127.0.0.1:5000/docs
+2026-06-28 17:58:32,072 | WARNING | _internal |  * Debugger is active!
+2026-06-28 17:58:32,082 | INFO | _internal |  * Debugger PIN: 952-586-876
+2026-06-28 17:59:40,687 | INFO | app | Health check passed
+2026-06-28 17:59:40,688 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:40] "GET /health HTTP/1.1" 200 -
+2026-06-28 17:59:41,014 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:41] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2026-06-28 17:59:41,328 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:41] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2026-06-28 17:59:41,666 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:41] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-28 17:59:41,981 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:41] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-28 17:59:41,990 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:41] "[35m[1mPOST /api/complaints HTTP/1.1[0m" 201 -
+2026-06-28 17:59:41,996 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:41] "GET /api/complaints HTTP/1.1" 200 -
+2026-06-28 17:59:42,001 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:42] "GET /api/admin/complaints HTTP/1.1" 200 -
+2026-06-28 17:59:42,016 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:42] "PUT /api/admin/complaints/6a4113b5939c3fe0880bed34/assign HTTP/1.1" 200 -
+2026-06-28 17:59:42,023 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:42] "PUT /api/admin/complaints/6a4113b5939c3fe0880bed34/status HTTP/1.1" 200 -
+2026-06-28 17:59:42,030 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:42] "PUT /api/admin/complaints/6a4113b5939c3fe0880bed34/status HTTP/1.1" 200 -
+2026-06-28 17:59:42,036 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:42] "POST /api/admin/complaints/6a4113b5939c3fe0880bed34/escalate HTTP/1.1" 200 -
+2026-06-28 17:59:42,042 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:42] "POST /api/admin/complaints/6a4113b5939c3fe0880bed34/de-escalate HTTP/1.1" 200 -
+2026-06-28 17:59:42,045 | WARNING | app | 404 - Route not found
+2026-06-28 17:59:42,046 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 17:59:42] "[33mGET /api/analytics/summary HTTP/1.1[0m" 404 -
+2026-06-28 18:05:08,749 | INFO | logger | Logger initialized successfully
+2026-06-28 18:05:08,801 | INFO | app | All blueprints registered successfully
+2026-06-28 18:05:08,802 | INFO | app | Starting Complaint Management Platform...
+2026-06-28 18:05:08,802 | INFO | app | Swagger UI available locally at: http://127.0.0.1:5000/docs
+2026-06-28 18:05:08,812 | INFO | _internal | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.65:5000
+2026-06-28 18:05:08,813 | INFO | _internal | [33mPress CTRL+C to quit[0m
+2026-06-28 18:05:22,525 | INFO | app | Health check passed
+2026-06-28 18:05:22,527 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:22] "GET /health HTTP/1.1" 200 -
+2026-06-28 18:05:22,834 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:22] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2026-06-28 18:05:23,160 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:23] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2026-06-28 18:05:23,499 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:23] "[35m[1mPOST /api/auth/register HTTP/1.1[0m" 201 -
+2026-06-28 18:05:23,815 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:23] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-28 18:05:24,128 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-28 18:05:24,443 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "POST /api/auth/login HTTP/1.1" 200 -
+2026-06-28 18:05:24,453 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "[35m[1mPOST /api/complaints HTTP/1.1[0m" 201 -
+2026-06-28 18:05:24,471 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "[35m[1mPOST /api/complaints/6a41150cc8e0425b994e0d79/upload HTTP/1.1[0m" 201 -
+2026-06-28 18:05:24,544 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "GET /api/uploads/c7f5fb93-bedd-4629-a985-f3c75750c025_test_file.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmE0MTE1MGFjOGUwNDI1Yjk5NGUwZDc2Iiwicm9sZSI6InVzZXIiLCJleHAiOjE3ODI3MzY1MjMsImlhdCI6MTc4MjY1MDEyM30.8s5mEZF28WWI7ivRbgoKVY8NmsNWF9fF1XJxvdDQan8 HTTP/1.1" 200 -
+2026-06-28 18:05:24,554 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "GET /api/uploads/c7f5fb93-bedd-4629-a985-f3c75750c025_test_file.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmE0MTE1MGJjOGUwNDI1Yjk5NGUwZDc3Iiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNzgyNzM2NTI0LCJpYXQiOjE3ODI2NTAxMjR9.wIzyKkqAO4F6U59n8g-inT7EQIDG8bhK9kHRN6ryPCA HTTP/1.1" 200 -
+2026-06-28 18:05:24,559 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "[31m[1mGET /api/uploads/c7f5fb93-bedd-4629-a985-f3c75750c025_test_file.pdf HTTP/1.1[0m" 401 -
+2026-06-28 18:05:24,565 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "[31m[1mGET /api/uploads/c7f5fb93-bedd-4629-a985-f3c75750c025_test_file.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmE0MTE1MGJjOGUwNDI1Yjk5NGUwZDc4Iiwicm9sZSI6InVzZXIiLCJleHAiOjE3ODI3MzY1MjQsImlhdCI6MTc4MjY1MDEyNH0.G7xvhg7pXE_UhNcf5ic-RYJAN81B9wdWWrpbbRXMyCQ HTTP/1.1[0m" 403 -
+2026-06-28 18:05:24,584 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "GET /api/analytics/summary HTTP/1.1" 200 -
+2026-06-28 18:05:24,588 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "[31m[1mGET /api/analytics/summary HTTP/1.1[0m" 403 -
+2026-06-28 18:05:24,602 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "GET /api/analytics/status HTTP/1.1" 200 -
+2026-06-28 18:05:24,607 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "[31m[1mGET /api/analytics/status HTTP/1.1[0m" 403 -
+2026-06-28 18:05:24,628 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "GET /api/analytics/category HTTP/1.1" 200 -
+2026-06-28 18:05:24,632 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "[31m[1mGET /api/analytics/category HTTP/1.1[0m" 403 -
+2026-06-28 18:05:24,649 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "GET /api/analytics/trends HTTP/1.1" 200 -
+2026-06-28 18:05:24,654 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "[31m[1mGET /api/analytics/trends HTTP/1.1[0m" 403 -
+2026-06-28 18:05:24,669 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "GET /api/analytics/top-users HTTP/1.1" 200 -
+2026-06-28 18:05:24,674 | INFO | _internal | 127.0.0.1 - - [28/Jun/2026 18:05:24] "[31m[1mGET /api/analytics/top-users HTTP/1.1[0m" 403 -
